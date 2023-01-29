@@ -34,21 +34,29 @@
                  </div>
                <div class="mb-3 text-center">
                 <div class="mb-1 ">
-                    <button type="submit" class="btn btn-primary" >acortar</button>
+                    <button type="submit" class="btn btn-primary text-left" >acortar</button>
                   </div>
                 </div>
-               <div class="mb-3">
-                <div class="alert alert-primary" role="alert">
-                    <h2> {{url_recortada}} </h2>
-                  </div>
-                </div>
+               
                 
            </form>
 
+           <div class="mb-3">
+            <div class="alert alert-primary" role="alert">
+                <span id="url" class="text-white "> {{url_recortada}} </span>
+                <button id="copiar" class="btn btn-primary p-sm-2" onclick="copiar_url();">copiar</button>
+                <script > 
+                  function copiar_url() {
+                    let url = document.getElementById('url');
+                    let button=document.getElementById('copiar');
+                    navigator.clipboard.writeText(url.textContent);
+                    button.textContent='Copiado';
+                } 
+                </script>
+              </div>
+            </div>
         </div>
-        
-        
-        
+  
     </body>
     <footer class="fixed-bottom">
       <div class="container-fluid alert-primary">
